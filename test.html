@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Stories</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 400px;
+      height: 700px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* شريط التقدم */
+    .progress {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      height: 4px;
+      display: flex;
+      gap: 5px;
+      z-index: 10;
+    }
+
+    .progress-bar {
+      flex: 1;
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: white;
+      animation: fill 5s linear forwards;
+    }
+
+    @keyframes fill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    /* النقط تحت */
+    .swiper-pagination {
+      bottom: 15px !important;
+    }
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.6;
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+      opacity: 1;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="swiper">
+    <!-- شريط التقدم -->
+    <div class="progress" id="progress"></div>
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://picsum.photos/400/700?1"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/400/700?2"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/400/700?3"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/400/700?4"></div>
+    </div>
+
+    <!-- النقط تحت -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const slidesCount = document.querySelectorAll('.swiper-slide').length;
+    const progressContainer = document.getElementById('progress');
+
+    // إنشاء شريط لكل صورة
+    for (let i = 0; i < slidesCount; i++) {
+      const bar = document.createElement('div');
+      bar.className = 'progress-bar';
+      bar.innerHTML = "<span></span>";
+      progressContainer.appendChild(bar);
+    }
+
+    const swiper = new Swiper('.swiper', {
+      autoplay: {
+        delay: 5000, // 5 ثواني لكل صورة
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      on: {
+        slideChange: () => {
+          updateProgress(swiper.activeIndex);
+        }
+      }
+    });
+
+    function updateProgress(index) {
+      const bars = document.querySelectorAll('.progress-bar span');
+      bars.forEach((bar, i) => {
+        bar.style.animation = "none"; // وقف القديم
+        bar.offsetHeight; // ريستارت
+        if (i === index) {
+          bar.style.animation = "fill 5s linear forwards";
+        } else if (i < index) {
+          bar.style.width = "100%";
+        } else {
+          bar.style.width = "0%";
+        }
+      });
+    }
+
+    // بدء أول بار
+    updateProgress(0);
+  </script>
+</body>
+</html>

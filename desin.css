@@ -1,0 +1,316 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(to left, rgba(69, 3, 3, 0.943), black);
+    color: #000;
+ font-family: Arial, sans-serif;
+    
+}
+
+header{
+    background-color: #3B060A;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 20px;
+}
+
+header a{
+    color: #fff;
+}
+
+.logo{
+width: 30px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly ;
+    gap: 100px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h3{
+  color: #fff;
+}
+/* hamborgr */
+header ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* همبورجر */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 250px;
+  height: 100%;
+  background: #171616;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding-top: 90px;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar ul li {
+  background-color: #000000;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #d90404;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+/* زر الخروج */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* الخلفية السوداء */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 1000;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+}
+
+
+/* off% */
+.off{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.number-off{
+  font-size: 20px;
+}
+
+
+/* transationis */
+
+.transationis{
+
+}
+
+.transationis-t{
+  text-align: center;
+  font-size: 27px;
+}
+.transationis-tt{
+  text-align: center;
+  font-size: 27px;
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius:25px ;
+}
+
+/* شريط التقدم */
+.progress {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 4px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.progress-bar {
+  flex: 1;
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: white;
+  animation: fill 5s linear forwards;
+}
+
+@keyframes fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* النقط تحت */
+.swiper-pagination {
+  bottom: 15px !important;
+}
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+}
+
+.progress {
+  display: none !important;
+}
+
+
+@media (max-width: 600px) {
+  .swiper {
+    max-width: 95%;   /* ياخد عرض الشاشة كله */
+    height: 50%;      /* يخلي الارتفاع تقريبا طول الموبايل */
+    border-radius: 0;  /* يشيل الكورنر عشان يبقى Fullscreen */
+  }
+
+}
+
+
+/* acoont */
+
+.accont{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.accont a{
+    text-decoration: none;
+    color: #000;
+    gap: 200px;
+    font-size: 18px;
+}
+
+
+
+.accont h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* مسافة بين النص والصورة */
+  font-size: 22px;
+  margin: 0 0 15px 0;
+}
+
+
+/* ترتيب الأيقونات */
+.accont div {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* الأيقونات */
+.accont div a {
+  font-size: 38px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* تأثير Hover */
+.accont div a:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
+/* page-data */
+
+
+/* buy */
+
+
+
+/* foterr */
+footer {
+    background-color: #521313;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+
+}

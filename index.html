@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cap yossef</title>
+    <link rel="icon" type="image/png" href="photo/logo2.png">
+    <link rel="stylesheet" href="desin.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<div>
+<header>
+  <a class="logo" href="index.html">
+    <img src="photo/logo.png" width="40px" alt="logo">
+  </a>
+
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+  <ul class="menu" id="menu">
+    <li><a href="">home</a></li>
+    <li><a href="">data form</a></li>
+    <li><a href="">account</a></li>
+    <li><a href="">transactions</a></li>
+  </ul>
+</header>
+
+<!-- القائمة الجانبية -->
+<nav class="sidebar" id="sidebar">
+  <div class="close-btn" id="close-btn">&times;</div>
+  <ul>
+    <li><a href="">home</a></li>
+    <li><a href="">data form</a></li>
+    <li><a href="">accont</a></li>
+    <li><a href="">trsntionis</a></li>
+  </ul>
+</nav>
+
+<!-- 0ff% -->
+<a href="">
+<div class="off"> 
+  <h3 class="number-off">50% oFF On 3 Months Or More</h3>
+  <img src="photo/logo-off.png" width="150px" class="logo-off">
+</div>
+</a>
+<br>
+<br>
+
+<div class="transationis">
+<h3 class="transationis-t">Be The Next <span class="transationis-tt"> Story </span></h3>
+<br>
+  <div class="swiper">
+    <!-- شريط التقدم -->
+    <div class="progress" id="progress"></div>
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="photo/1.png"></div>
+      <div class="swiper-slide"><img src="photo/2.png"></div>
+    
+    </div>
+
+    <!-- النقط تحت -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+
+<br>
+<div class="accont">
+    <h3>We Got No Fans We Got Family</h3>
+    <br>
+    <div>
+        <a class="facebook" href="face" target="_blank"><i class='bx bxl-facebook-circle' style='color:#1877f2'  ></i></a>
+        <a class="instagram" href="ins" target="_blank"><i class='bx bxl-instagram' style='color:#E4405F' ></i></a>
+        <a class="whatsapp" href="watts" target="_blank"><i class='bx bxl-whatsapp'  style='color:#25D366'></i></a>
+        <a class="tiktok"  href="tik tok" target="_blank"><i class='bx bxl-tiktok' style='color: #fcfcfc;'></i></a>
+    </div>
+
+<br>
+<br>
+<footer>
+    <p>&copy; 2025 cap yossef. All rights reserved.</p>
+    <br>
+    <p>Contact us at <a href="https://www.instagram.com/xr.com0/?utm_source=ig_web_button_share_sheet" target="_blank">xr<a></p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('close-btn');
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('show');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('show');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('show');
+  });
+
+
+
+
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="jave.js"></script>
+</body>
+</html>
